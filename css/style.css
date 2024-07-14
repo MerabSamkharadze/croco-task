@@ -1,6 +1,8 @@
 body {
   height: 400vh;
 }
+
+/* header */
 header {
   position: sticky;
   top: 0;
@@ -26,4 +28,34 @@ header {
 .date span {
   margin-left: 20px;
   font-size: 18px;
+}
+
+/* navigation */
+
+nav {
+  height: 88vh;
+  width: 150px;
+  background-color: rgb(13, 13, 72);
+  position: sticky;
+  left: 0;
+  top: 80px;
+  color: antiquewhite;
+}
+
+.btn {
+  border-radius: 15px;
+  width: 95%;
+  text-align: center;
+  border: 2px solid rgb(22, 110, 22);
+  padding: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.btns {
+  padding-top: 100px;
+}
+
+.btn:hover {
+  border: 2px solid rgba(22, 110, 22, 0.564);
+  background-color: rgb(21, 21, 122);
 }
