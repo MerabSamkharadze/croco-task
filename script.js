@@ -44,3 +44,26 @@ users.then((response) => {
     users_ul.innerHTML += root;
   });
 });
+
+//posts
+
+const posts = getData("/posts");
+posts.then((response) => {
+  console.log(response);
+});
+
+//date
+
+const dateDiv = document.querySelector(".date");
+
+const date = new Date();
+
+const formattedDate = date.toLocaleString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+});
+
+dateDiv.innerText = formattedDate;
