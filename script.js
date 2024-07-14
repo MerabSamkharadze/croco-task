@@ -18,19 +18,12 @@ const postsBtn = document.querySelector(".posts");
 const users_ul = document.querySelector(".users_ul");
 const users_table = document.querySelector(".users_table");
 const posts_table = document.querySelector(".posts_table");
-usersBtn.addEventListener("click", () => {
-  posts_table.classList.remove("active");
-  users_table.classList.add("active");
-});
-postsBtn.addEventListener("click", () => {
-  posts_table.classList.add("active");
-  users_table.classList.remove("active");
-});
 
-const users = getData("/users");
-users.then((response) => {
-  response.forEach((element) => {
-    const root = `
+if (users_ul) {
+  const users = getData("/users");
+  users.then((response) => {
+    response.forEach((element) => {
+      const root = `
             <li>
           <div class="name">${element.name} ${element.username}</div>
           <div class="mobile_number"><span>Tel: </span>${element.phone}</div>
@@ -41,16 +34,28 @@ users.then((response) => {
           <button>პოსტები</button>
         </li>
     `;
-    users_ul.innerHTML += root;
+      users_ul.innerHTML += root;
+    });
   });
-});
+}
 
 //posts
-
-const posts = getData("/posts");
-posts.then((response) => {
-  console.log(response);
-});
+const posts_ul = document.querySelector(".posts_ul");
+if (posts_ul) {
+  const posts = getData("/posts");
+  posts.then((response) => {
+    response.forEach((element) => {
+      const post = `
+        <li>
+                  <div class="name">merabi sakmharadze</div>
+        
+                  <div class="title"><span>Post Title: </span>${element.title}</div>
+         </li>
+     `;
+      posts_ul.innerHTML += post;
+    });
+  });
+}
 
 //date
 

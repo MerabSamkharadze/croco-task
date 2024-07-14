@@ -1,10 +1,9 @@
 body {
   background-color: aquamarine;
-  height: 500vh;
 }
 /* header */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   background-color: rgb(5, 5, 48);
@@ -37,7 +36,7 @@ nav {
   height: 88vh;
   width: 150px;
   background-color: rgb(13, 13, 72);
-  position: sticky;
+  position: fixed;
   left: 0;
   top: 80px;
   color: antiquewhite;
@@ -52,6 +51,9 @@ nav {
   padding: 5px;
   margin-top: 20px;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: antiquewhite;
 }
 .btns {
   padding-top: 100px;
@@ -69,7 +71,6 @@ nav {
   position: absolute;
   top: 0;
   height: 100%;
-  display: none;
 }
 .users_ul {
   width: 75%;
