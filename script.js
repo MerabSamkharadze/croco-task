@@ -52,8 +52,12 @@ if (posts_ul) {
     console.log(users);
     const posts = await getData(userId ? `/posts?userId=${userId}` : "/posts");
     posts.forEach((element) => {
+      const userIdEli = document.createElement("li");
+      const button = document.createElement("button");
+      button.innerText = "დეტალურად";
+      button.classList.add("button");
       const post = `
-                <li>
+             
                           <div class="name">${
                             users.find((ell) => ell.id === element.userId).name
                           }</div>
@@ -61,18 +65,46 @@ if (posts_ul) {
                           <div class="title"><span>Post Title: </span>${
                             element.title
                           }</div>
-                 </li>
+                          
+                        
+               
              `;
+
       const postWithUserId = `
-             <li>
+            
                        <div class="Title"><span>Post Title: </span>${element.title}</div>
    
                        <div class="title">${element.body}</div>
-              </li>
+                     
+           
           `;
-      userId
-        ? (posts_ul.innerHTML += postWithUserId)
-        : (posts_ul.innerHTML += post);
+      userIdEli.innerHTML = userId ? postWithUserId : post;
+      userIdEli.appendChild(button);
+      button.addEventListener("click", () => {
+        console.log(element);
+        const container = document.querySelector(".container");
+        container.classList.add("active");
+        container.innerHTML = "";
+        const x = document.createElement("div");
+        x.classList.add("x");
+        x.innerText = "X";
+        x.addEventListener("click", () => {
+          container.classList.remove("active");
+        });
+        const modal = `
+  
+      <h1>${element.title}</h1>
+          <p>
+                 ${element.body}
+         </p>
+ 
+        `;
+
+        container.innerHTML = modal;
+        container.prepend(x);
+      });
+
+      posts_ul.appendChild(userIdEli);
     });
   };
   getUsersPost();

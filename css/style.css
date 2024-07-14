@@ -82,9 +82,7 @@ nav {
   margin-top: 100px;
   margin-left: 200px;
 }
-.active {
-  display: block;
-}
+
 li {
   width: 100%;
   height: 50px;
@@ -97,6 +95,7 @@ li {
   padding: 5px 20px;
   margin-top: 5px;
   position: relative;
+  cursor: pointer;
 }
 .name {
   color: rgb(224, 197, 161);
@@ -107,8 +106,8 @@ li span {
 }
 
 .button {
-  width: 100px;
-  padding: 3px 5px;
+  width: 120px;
+  padding: 5px 5px;
   border-radius: 10px;
   background-color: rgb(18, 13, 77);
   border: 1px solid antiquewhite;
@@ -136,4 +135,45 @@ li span {
     transform: scale(1);
     background-color: #3498db;
   }
+}
+
+/* modal */
+
+.container {
+  width: 70%;
+  height: 70%;
+  background-color: rgba(187, 110, 47, 0.984);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  display: none;
+}
+.container h1 {
+  padding: 0 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
+
+.container p {
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 35px;
+  padding: 0 40px;
+}
+.active {
+  display: block;
+}
+.x {
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
 }
