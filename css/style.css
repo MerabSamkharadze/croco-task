@@ -1,0 +1,29 @@
+body {
+  height: 400vh;
+}
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgb(5, 5, 48);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 80px;
+}
+
+.logo {
+  color: antiquewhite;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.date {
+  color: antiquewhite;
+  font-size: 25px;
+}
+.date span {
+  margin-left: 20px;
+  font-size: 18px;
+}
