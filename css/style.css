@@ -106,7 +106,7 @@ li span {
   margin-left: 15px;
 }
 
-button {
+.button {
   width: 100px;
   padding: 3px 5px;
   border-radius: 10px;
@@ -116,9 +116,10 @@ button {
   cursor: pointer;
   position: absolute;
   right: 20px;
+  text-align: center;
 }
 
-button:hover {
+.button:hover {
   animation: pulse 1s infinite;
 }
 

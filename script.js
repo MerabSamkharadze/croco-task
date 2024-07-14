@@ -31,7 +31,7 @@ if (users_ul) {
             <span>Email: </span>${element.email}
           </div>
           <div class="company"><span>Company: </span>${element.company.name}</div>
-          <button>პოსტები</button>
+          <a class='button'  href='/posts.html?userId=${element.id}'>პოსტები</a>
         </li>
     `;
       users_ul.innerHTML += root;
@@ -40,12 +40,17 @@ if (users_ul) {
 }
 
 //posts
+
+const url = window.location.href;
+const urlObject = new URL(url);
+const userId = urlObject.searchParams.get("userId");
+
 const posts_ul = document.querySelector(".posts_ul");
 if (posts_ul) {
   const getUsersPost = async () => {
     const users = await getData("/users");
     console.log(users);
-    const posts = await getData("/posts");
+    const posts = await getData(userId ? `/posts?userId=${userId}` : "/posts");
     posts.forEach((element) => {
       const post = `
                 <li>
@@ -58,7 +63,16 @@ if (posts_ul) {
                           }</div>
                  </li>
              `;
-      posts_ul.innerHTML += post;
+      const postWithUserId = `
+             <li>
+                       <div class="Title"><span>Post Title: </span>${element.title}</div>
+   
+                       <div class="title">${element.body}</div>
+              </li>
+          `;
+      userId
+        ? (posts_ul.innerHTML += postWithUserId)
+        : (posts_ul.innerHTML += post);
     });
   };
   getUsersPost();
