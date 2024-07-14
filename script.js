@@ -42,19 +42,26 @@ if (users_ul) {
 //posts
 const posts_ul = document.querySelector(".posts_ul");
 if (posts_ul) {
-  const posts = getData("/posts");
-  posts.then((response) => {
-    response.forEach((element) => {
+  const getUsersPost = async () => {
+    const users = await getData("/users");
+    console.log(users);
+    const posts = await getData("/posts");
+    posts.forEach((element) => {
       const post = `
-        <li>
-                  <div class="name">merabi sakmharadze</div>
-        
-                  <div class="title"><span>Post Title: </span>${element.title}</div>
-         </li>
-     `;
+                <li>
+                          <div class="name">${
+                            users.find((ell) => ell.id === element.userId).name
+                          }</div>
+      
+                          <div class="title"><span>Post Title: </span>${
+                            element.title
+                          }</div>
+                 </li>
+             `;
       posts_ul.innerHTML += post;
     });
-  });
+  };
+  getUsersPost();
 }
 
 //date
