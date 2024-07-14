@@ -1,3 +1,6 @@
+body {
+  background-color: aquamarine;
+}
 /* header */
 header {
   position: sticky;
@@ -65,23 +68,24 @@ nav {
   position: absolute;
   top: 0;
   height: 100%;
+  display: none;
 }
 .users_ul {
   width: 75%;
   margin-top: 100px;
   margin-left: 200px;
-  /* display: none; */
 }
 .posts_ul {
   width: 75%;
   margin-top: 100px;
   margin-left: 200px;
-  display: none;
 }
-
+.active {
+  display: block;
+}
 li {
   width: 100%;
-  height: 40px;
+  height: 50px;
   border-radius: 20px;
   background-color: rgb(6, 96, 6);
   color: antiquewhite;

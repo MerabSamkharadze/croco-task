@@ -13,11 +13,22 @@ const getData = async (resource) => {
 };
 
 //users
-
+const usersBtn = document.querySelector(".users");
+const postsBtn = document.querySelector(".posts");
 const users_ul = document.querySelector(".users_ul");
+const users_table = document.querySelector(".users_table");
+const posts_table = document.querySelector(".posts_table");
+usersBtn.addEventListener("click", () => {
+  posts_table.classList.remove("active");
+  users_table.classList.add("active");
+});
+postsBtn.addEventListener("click", () => {
+  posts_table.classList.add("active");
+  users_table.classList.remove("active");
+});
+
 const users = getData("/users");
 users.then((response) => {
-  console.log(response);
   response.forEach((element) => {
     const root = `
             <li>
