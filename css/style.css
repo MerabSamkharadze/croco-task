@@ -76,6 +76,7 @@ nav {
   width: 75%;
   margin-top: 100px;
   margin-left: 200px;
+  display: none;
 }
 
 li {
@@ -84,12 +85,16 @@ li {
   border-radius: 20px;
   background-color: rgb(6, 96, 6);
   color: antiquewhite;
-  font-size: 20px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   padding: 5px 20px;
   margin-top: 5px;
   position: relative;
+}
+.name {
+  color: rgb(224, 197, 161);
+  font-weight: 600;
 }
 li span {
   margin-left: 15px;
