@@ -97,6 +97,21 @@ li {
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 1200px) {
+  li {
+    height: 90px;
+    display: block;
+  }
+  .container {
+    width: 50%;
+  }
+  .container h1 {
+    font-size: 30px;
+  }
+  .container p {
+    font-size: 25px;
+  }
+}
 .name {
   color: rgb(224, 197, 161);
   font-weight: 600;
@@ -140,10 +155,10 @@ li span {
 /* modal */
 
 .container {
-  width: 70%;
+  width: 60%;
   height: 70%;
   background-color: rgba(187, 110, 47, 0.984);
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -154,7 +169,7 @@ li span {
   padding: 0 10px;
   width: 100%;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .container p {
@@ -164,6 +179,7 @@ li span {
   font-size: 35px;
   padding: 0 40px;
 }
+
 .active {
   display: block;
 }
