@@ -62,9 +62,7 @@ if (posts_ul) {
                             users.find((ell) => ell.id === element.userId).name
                           }</div>
       
-                          <div class="title"><span>Post Title: </span>${
-                            element.title
-                          }</div>
+                          <div ><span>Post Title: </span>${element.title}</div>
                           
                         
                
@@ -72,9 +70,9 @@ if (posts_ul) {
 
       const postWithUserId = `
             
-                       <div class="Title"><span>Post Title: </span>${element.title}</div>
+                       <div class="title">${element.title}</div>
    
-                       <div class="title">${element.body}</div>
+                       <div class="body">${element.body}</div>
                      
            
           `;

@@ -73,19 +73,19 @@ nav {
   height: 100%;
 }
 .users_ul {
-  width: 75%;
+  width: 80%;
   margin-top: 100px;
   margin-left: 200px;
 }
 .posts_ul {
-  width: 75%;
+  width: 80%;
   margin-top: 100px;
   margin-left: 200px;
 }
 
 li {
   width: 100%;
-  height: 50px;
+  height: 60px;
   border-radius: 20px;
   background-color: rgb(6, 96, 6);
   color: antiquewhite;
@@ -97,21 +97,7 @@ li {
   position: relative;
   cursor: pointer;
 }
-@media (max-width: 1200px) {
-  li {
-    height: 90px;
-    display: block;
-  }
-  .container {
-    width: 50%;
-  }
-  .container h1 {
-    font-size: 30px;
-  }
-  .container p {
-    font-size: 25px;
-  }
-}
+
 .name {
   color: rgb(224, 197, 161);
   font-weight: 600;
@@ -192,4 +178,30 @@ li span {
   text-align: left;
   padding: 10px;
   cursor: pointer;
+}
+.body {
+  padding-right: 160px;
+  padding-left: 10px;
+  border-left: 1px solid antiquewhite;
+}
+.title {
+  color: rgb(236, 199, 150);
+  font-weight: 700;
+  padding-right: 10px;
+}
+
+@media (max-width: 1200px) {
+  li {
+    height: 100px;
+    display: block;
+  }
+  .container {
+    width: 50%;
+  }
+  .container h1 {
+    font-size: 30px;
+  }
+  .container p {
+    font-size: 25px;
+  }
 }
